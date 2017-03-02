@@ -29,7 +29,7 @@ e.g.
         			fluentd-address: localhost:24224
         			tag: my.webapp
 
-  		fluentd:
+  		logging:
     		image: osmorgan/fluentd-elasticsearch
     		environment: 
       			- es_log_host=my.elasticsearch.com
