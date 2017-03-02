@@ -4,13 +4,13 @@ fluentd docker image pre-configured to forward in logstash format to a host spec
 
 e.g.
 
-docker run -e es_log_host=https://my.elasticsearch.com -e es_log_port=9200 osmorgan/fluentd-elasticsearch:latest
+	docker run -e es_log_host=https://my.elasticsearch.com -e es_log_port=9200 osmorgan/fluentd-elasticsearch:latest
 
 can be used as a companion for other containers running locally:
 
 e.g.
 
-docker-compose.yml
+####docker-compose.yml
 
 	version: '2'
 	
