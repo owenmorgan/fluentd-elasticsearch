@@ -1,7 +1,8 @@
 # fluentd-elasticsearch
 fluentd docker image pre-configured to forward in logstash format to a host specified in environment variables : 
 
-es_log_host 
+es_log_host
+
 es_log_port
 
 
