@@ -21,9 +21,9 @@ e.g.
       			- "80:80"
     		logging:
       			driver: "fluentd"
-      		options:
-        		fluentd-address: localhost:24224
-        		tag: my.webapp
+      			options:
+        			fluentd-address: localhost:24224
+        			tag: my.webapp
 
   		fluentd:
     		image: osmorgan/fluentd-elasticsearch
