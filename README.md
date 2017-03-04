@@ -15,26 +15,24 @@ can be used as a companion for other containers running locally:
 e.g.
 
 ####docker-compose.yml
+	version: "2"
 
-	version: '2'
-	
 	services:
   		web-app:
     		image: httpd
     		ports:
       			- "80:80"
     		logging:
-      			driver: "fluentd"
-      			options:
-        			fluentd-address: localhost:24224
-        			tag: my.webapp
+      			driver: "json-file"
 
-  		logging:
-    		image: osmorgan/fluentd-elasticsearch
-    		environment: 
-      			- es_log_host=my.elasticsearch.com
-      			- es_log_port=9200
-    		ports:
-    		   	- "24224:24224/udp"
-      			- "24224:24224"
+  		logger:
+	    	image: osmorgan/fluentd-elasticsearch:latest
+	    	environment: 
+	      			- es_log_host=my.elasticsearch.com
+	      			- es_log_port=9200
+	      	volumes:
+	     	 	- /var/lib/docker/containers:/fluentd/logs
+	    	logging:
+	      		driver: none
+
       			
