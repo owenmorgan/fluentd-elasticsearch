@@ -8,7 +8,7 @@ es_log_port
 
 e.g.
 
-	docker run -e es_log_host=https://my.elasticsearch.com -e es_log_port=9200 osmorgan/fluentd-elasticsearch:latest
+	docker run -v /var/lib/docker/containers:/fluentd/logs -e es_log_host=https://my.elasticsearch.com -e es_log_port=9200 osmorgan/fluentd-elasticsearch:latest
 
 can be used as a companion for other containers running locally:
 
