@@ -1,4 +1,4 @@
-FROM gcr.io/google_containers/ubuntu-slim:0.4
+FROM gcr.io/google_containers/ubuntu-slim:0.6
 
 RUN apt-get update
 RUN apt-get install -y -q --no-install-recommends \
@@ -21,7 +21,6 @@ RUN rm -rf /opt/td-agent/embedded/share/doc \
                 /opt/td-agent/embedded/bin/postgres \
                 /opt/td-agent/embedded/share/postgresql
 
-RUN apt-get remove -y
 RUN apt-get autoremove -y
 RUN apt-get clean -y
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
